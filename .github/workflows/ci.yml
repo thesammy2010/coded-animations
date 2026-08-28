@@ -19,13 +19,13 @@ jobs:
         run: uv python install 3.12
 
       - name: Install dependencies
-        run: uv sync --extra dev
+        run: uv sync --only-group dev
 
       - name: Run ruff check
-        run: uv run ruff check .
+        run: uv run --no-sync ruff check .
 
       - name: Run ruff format check
-        run: uv run ruff format --check .
+        run: uv run --no-sync ruff format --check .
 
   pre-commit:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
         run: uv python install 3.12
 
       - name: Install dependencies
-        run: uv sync --extra dev
+        run: uv sync --only-group dev
 
       - name: Run pre-commit
-        run: uv run pre-commit run --all-files
+        run: uv run --no-sync pre-commit run --all-files
