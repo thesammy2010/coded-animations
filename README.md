@@ -7,7 +7,7 @@ This repo is for me to use code to create animations with [Manim](https://www.ma
 Requires Python 3.10+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-uv sync --extra dev
+uv sync
 uv run pre-commit install
 ```
 
